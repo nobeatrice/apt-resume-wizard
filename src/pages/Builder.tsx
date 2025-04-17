@@ -22,8 +22,8 @@ const Builder = () => {
               </p>
             </div>
             <img 
-              src="/lovable-uploads/44097972-08b9-4fe8-9d2a-6df3c245accd.png" 
-              alt="AI assistant with magnifying glass" 
+              src="/lovable-uploads/5662b0df-41cf-46d8-8fa1-434092b637e3.png" 
+              alt="AI assistant" 
               className="w-40 h-auto hidden md:block"
             />
           </div>

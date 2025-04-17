@@ -37,7 +37,7 @@ const Editor = () => {
         <div className="bg-zinc-800 rounded-lg p-6">
           <div className="bg-zinc-700 rounded-lg p-8 mb-6">
             <div className="bg-white mx-auto w-full max-w-2xl h-[500px] overflow-y-auto shadow-lg p-4">
-              <img src="/lovable-uploads/16964a2a-dd5a-405d-97b1-a11dae9d582d.png" alt="Resume Preview" className="w-full h-auto" />
+              <img src="/lovable-uploads/3b52bb20-765d-4ec6-908a-4defa9092f87.png" alt="Resume Preview" className="w-full h-auto" />
             </div>
             
             <div className="flex justify-end mt-4">

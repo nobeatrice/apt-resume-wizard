@@ -9,12 +9,12 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 type FilterType = "Professional" | "Modern" | "Creative" | "Simple";
 
 const templates = [
-  { id: 1, name: "Template Name", description: "Template Description", image: "/placeholder.svg", categories: ["Professional", "Modern"] },
-  { id: 2, name: "Template Name", description: "Template Description", image: "/placeholder.svg", categories: ["Professional"] },
-  { id: 3, name: "Template Name", description: "Template Description", image: "/placeholder.svg", categories: ["Creative"] },
-  { id: 4, name: "Template Name", description: "Template Description", image: "/placeholder.svg", categories: ["Simple", "Modern"] },
-  { id: 5, name: "Template Name", description: "Template Description", image: "/placeholder.svg", categories: ["Professional", "Simple"] },
-  { id: 6, name: "Template Name", description: "Template Description", image: "/placeholder.svg", categories: ["Creative", "Modern"] },
+  { id: 1, name: "Alice Doe", description: "Clean Professional Template", image: "/lovable-uploads/19293f23-549c-4274-8ca1-2ff01112e9a4.png", categories: ["Professional", "Modern"] },
+  { id: 2, name: "Template Name", description: "Template Description", image: "/lovable-uploads/19293f23-549c-4274-8ca1-2ff01112e9a4.png", categories: ["Professional"] },
+  { id: 3, name: "Template Name", description: "Template Description", image: "/lovable-uploads/19293f23-549c-4274-8ca1-2ff01112e9a4.png", categories: ["Creative"] },
+  { id: 4, name: "Template Name", description: "Template Description", image: "/lovable-uploads/19293f23-549c-4274-8ca1-2ff01112e9a4.png", categories: ["Simple", "Modern"] },
+  { id: 5, name: "Template Name", description: "Template Description", image: "/lovable-uploads/19293f23-549c-4274-8ca1-2ff01112e9a4.png", categories: ["Professional", "Simple"] },
+  { id: 6, name: "Template Name", description: "Template Description", image: "/lovable-uploads/19293f23-549c-4274-8ca1-2ff01112e9a4.png", categories: ["Creative", "Modern"] },
 ];
 
 const Templates = () => {
@@ -66,7 +66,7 @@ const Templates = () => {
               {filteredTemplates.map(template => (
                 <div key={template.id} className="bg-zinc-700 rounded-lg overflow-hidden">
                   <div className="bg-white p-2 border border-zinc-200">
-                    <img src="/lovable-uploads/16964a2a-dd5a-405d-97b1-a11dae9d582d.png" alt={template.name} className="w-full h-auto" />
+                    <img src={template.image} alt={template.name} className="w-full h-auto" />
                   </div>
                   <div className="p-4">
                     <h3 className="text-white font-medium">{template.name}</h3>

@@ -59,7 +59,7 @@ const ATSChecker = () => {
           <div className="lg:col-span-9">
             <div className="bg-zinc-800 rounded-lg p-6">
               <img 
-                src="/lovable-uploads/16964a2a-dd5a-405d-97b1-a11dae9d582d.png" 
+                src="/lovable-uploads/3b52bb20-765d-4ec6-908a-4defa9092f87.png" 
                 alt="Resume Preview"
                 className="w-full h-auto bg-white shadow-lg rounded-sm"
               />
