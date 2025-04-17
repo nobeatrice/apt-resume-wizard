@@ -32,7 +32,7 @@ const Index = () => {
           </div>
           <div className="w-full md:w-1/2">
             <img 
-              src="/lovable-uploads/ac4829d5-b6d9-4d24-8686-e847dc74e41e.png" 
+              src="/lovable-uploads/295e8ddf-f8de-4113-a0f3-a3e4bf6a4d55.png" 
               alt="Person with resume" 
               className="w-full max-w-md mx-auto"
             />
@@ -45,7 +45,7 @@ const Index = () => {
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center">
           <div className="w-full md:w-1/2 mb-10 md:mb-0">
             <img 
-              src="/lovable-uploads/59d2156e-a35e-4a15-a30c-df11383f2879.png" 
+              src="/lovable-uploads/92139e9e-a43a-4199-b83e-dfd285a1411c.png" 
               alt="Building blocks" 
               className="w-full max-w-md mx-auto"
             />
@@ -71,7 +71,7 @@ const Index = () => {
         <div className="container mx-auto px-4 flex flex-col md:flex-row-reverse items-center">
           <div className="w-full md:w-1/2 mb-10 md:mb-0">
             <img 
-              src="/lovable-uploads/2449ee31-3552-447b-8e13-4ee07904a2a8.png" 
+              src="/lovable-uploads/0a3d5ba9-5a92-4ea4-8dad-cf79bdf7860d.png" 
               alt="Person optimizing resume" 
               className="w-full max-w-md mx-auto"
             />
