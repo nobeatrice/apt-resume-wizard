@@ -18,6 +18,10 @@ export default {
 			}
 		},
 		extend: {
+			backgroundColor: {
+				'resume-teal': '#77BDC6',
+				'resume-bg': '#F2F3F9',
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
