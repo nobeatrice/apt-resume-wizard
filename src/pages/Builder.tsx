@@ -1,12 +1,30 @@
 
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
+import { useResume } from "@/contexts/ResumeContext";
+import { useToast } from "@/hooks/use-toast";
 
 const Builder = () => {
-  const [jobDescription, setJobDescription] = useState("");
+  const { jobDescription, setJobDescription } = useResume();
+  const navigate = useNavigate();
+  const { toast } = useToast();
+
+  const handleContinue = () => {
+    if (!jobDescription.trim()) {
+      toast({
+        title: "Job description required",
+        description: "Please enter a job description to continue.",
+        variant: "destructive",
+      });
+      return;
+    }
+    
+    // Store the job description and navigate to templates
+    navigate("/templates");
+  };
 
   return (
     <Layout>
@@ -43,12 +61,12 @@ const Builder = () => {
             
             <div className="flex justify-end">
               <Button 
-                asChild
+                onClick={handleContinue}
                 variant="secondary"
                 className="px-8"
                 disabled={!jobDescription.trim()}
               >
-                <Link to="/templates">Continue</Link>
+                Continue
               </Button>
             </div>
           </div>

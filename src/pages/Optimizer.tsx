@@ -5,10 +5,15 @@ import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { useDropzone } from 'react-dropzone';
 import { Upload, FileText, AlertCircle } from "lucide-react";
+import { useResume } from "@/contexts/ResumeContext";
+import { useToast } from "@/hooks/use-toast";
 
 const Optimizer = () => {
   const [file, setFile] = useState<File | null>(null);
+  const [isProcessing, setIsProcessing] = useState(false);
   const navigate = useNavigate();
+  const { setResumeData } = useResume();
+  const { toast } = useToast();
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     accept: {
@@ -24,8 +29,61 @@ const Optimizer = () => {
     }
   });
 
-  const handleUploadComplete = () => {
-    navigate('/builder');
+  const handleUploadComplete = async () => {
+    if (!file) return;
+    
+    try {
+      setIsProcessing(true);
+      
+      // In a real implementation, you would send this file to your Flask backend
+      // For now, we'll simulate parsing a resume
+      await new Promise(resolve => setTimeout(resolve, 1500)); // Simulate processing delay
+      
+      // Mock resume data extraction
+      const mockResumeData = {
+        name: "John Smith",
+        email: "john@example.com",
+        phone: "555-123-4567",
+        skills: ["Project Management", "UI/UX Design", "JavaScript", "React"],
+        experience: [
+          {
+            title: "Senior Designer",
+            company: "Design Co",
+            startDate: "2020-01",
+            endDate: "Present",
+            description: "Led design projects for major clients"
+          }
+        ],
+        education: [
+          {
+            institution: "University of Design",
+            degree: "Bachelor of Fine Arts",
+            graduationYear: "2018"
+          }
+        ]
+      };
+      
+      // Store the extracted resume data in context
+      setResumeData(mockResumeData);
+      
+      toast({
+        title: "Resume Uploaded",
+        description: "Your resume has been successfully processed.",
+      });
+      
+      // Navigate to builder to add job description
+      navigate('/builder');
+      
+    } catch (error) {
+      console.error("Error processing resume:", error);
+      toast({
+        title: "Upload Error",
+        description: "There was a problem processing your resume. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsProcessing(false);
+    }
   };
 
   return (
@@ -77,8 +135,9 @@ const Optimizer = () => {
                 <Button 
                   onClick={handleUploadComplete}
                   className="bg-[#77BDC6] hover:bg-[#67ADB7] text-white px-8"
+                  disabled={isProcessing}
                 >
-                  Optimize Resume
+                  {isProcessing ? "Processing..." : "Optimize Resume"}
                 </Button>
               </div>
             )}
