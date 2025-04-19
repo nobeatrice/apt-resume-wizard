@@ -2,11 +2,37 @@
 import { createContext, useContext, useState, ReactNode } from "react";
 import { optimizeResume } from "@/services/atsService";
 
+interface Experience {
+  title: string;
+  company: string;
+  startDate: string;
+  endDate: string;
+  description: string;
+}
+
+interface Education {
+  institution: string;
+  degree: string;
+  graduationYear: string;
+}
+
+interface ResumeData {
+  name?: string;
+  email?: string;
+  phone?: string;
+  skills?: string[];
+  experience?: Experience[];
+  education?: Education[];
+  certifications?: string[];
+  objective?: string;
+  [key: string]: any; // Allow for additional properties
+}
+
 interface ResumeContextType {
-  resumeData: any;
+  resumeData: ResumeData;
   jobDescription: string;
   selectedTemplate: string | null;
-  setResumeData: (data: any) => void;
+  setResumeData: (data: ResumeData) => void;
   setJobDescription: (description: string) => void;
   setSelectedTemplate: (templateId: string | null) => void;
   atsScore: number;
@@ -27,7 +53,7 @@ interface ResumeContextType {
 const ResumeContext = createContext<ResumeContextType | undefined>(undefined);
 
 export function ResumeProvider({ children }: { children: ReactNode }) {
-  const [resumeData, setResumeData] = useState({});
+  const [resumeData, setResumeData] = useState<ResumeData>({});
   const [jobDescription, setJobDescription] = useState("");
   const [selectedTemplate, setSelectedTemplate] = useState<string | null>(null);
   const [atsScore, setAtsScore] = useState(85);
@@ -49,10 +75,10 @@ export function ResumeProvider({ children }: { children: ReactNode }) {
         job_description: jobDescription,
         resume_content: JSON.stringify(resumeData),
         skills: resumeData.skills?.join(", ") || "",
-        experience: resumeData.experience?.map((exp: any) => 
+        experience: resumeData.experience?.map((exp) => 
           `${exp.title} at ${exp.company}: ${exp.description}`
         ).join(" ") || "",
-        education: resumeData.education?.map((edu: any) => 
+        education: resumeData.education?.map((edu) => 
           `${edu.degree} at ${edu.institution}`
         ).join(" ") || "",
         certifications: resumeData.certifications?.join(", ") || "",
