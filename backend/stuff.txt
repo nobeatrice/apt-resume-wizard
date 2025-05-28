@@ -1,0 +1,14 @@
+ats_resume_optimizer/
+│
+├── app/
+│   ├── __init__.py
+│   ├── main.py            # FastAPI entry point
+│   ├── models.py          # Pydantic models
+│   ├── scoring.py         # BERT inference logic
+│   ├── pdf_parser.py      # PDF parsing utilities
+│   ├── resume_generator.py# Resume generation logic
+│   └── database.py        # (Optional) DB models and utils
+│
+├── requirements.txt
+├── Dockerfile
+└── README.md

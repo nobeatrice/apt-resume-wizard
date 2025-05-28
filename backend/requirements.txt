@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+nest_asyncio
+pyngrok
+transformers
+torch
+pandas
+scikit-learn
+pdfplumber
+pyresparser
+nltk
+spacy
+python-multipart

@@ -1,0 +1,37 @@
+from pydantic import BaseModel
+from typing import List
+
+class ResumeData(BaseModel):
+    address: str = ""
+    career_objective: str = ""
+    skills: List[str] = []
+    educational_institution_name: str = ""
+    degree_names: str = ""
+    passing_years: str = ""
+    educational_results: str = ""
+    result_types: str = ""
+    major_field_of_studies: str = ""
+    professional_company_names: str = ""
+    company_urls: List[str] = []
+    start_dates: str = ""
+    end_dates: str = ""
+    related_skils_in_job: str = ""
+    positions: str = ""
+    locations: str = ""
+    responsibilities: str = ""
+    extra_curricular_activity_types: str = ""
+    extra_curricular_organization_names: str = ""
+    extra_curricular_organization_links: List[str] = []
+    role_positions: str = ""
+    languages: List[str] = []
+    proficiency_levels: List[str] = []
+    certification_providers: List[str] = []
+    certification_skills: List[str] = []
+    online_links: List[str] = []
+    issue_dates: List[str] = []
+    expiry_dates: List[str] = []
+    job_position_name: str = ""
+    educationaL_requirements: str = ""
+    experiencere_requirement: str = ""
+    age_requirement: str = ""
+    skills_required: str = ""
